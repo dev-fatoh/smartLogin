@@ -19,12 +19,7 @@ var userName = document.querySelector(".register #name");
 var userEmail = document.querySelector(".register #email");
 var userPassword = document.querySelector(".register #password");
 var user = {};
-var users;
-if (localStorage) {
-  users = JSON.parse(localStorage.getItem("users"));
-} else {
-  users = [];
-}
+var users = [];
 
 userName.addEventListener("change", function (e) {
   if (e.target.value == "") {
@@ -119,11 +114,15 @@ function displayLoginForm() {
 // get email and password values from loccalstorage
 var valuesOfUsers = [];
 function getUsersInfo() {
-  for (i = 0; i < users.length; i++) {
-    var userValues = Object.values(users[i]);
-    for (v = 0; v < userValues.length; v++) {
-      valuesOfUsers.push(userValues[v]);
+  if (users) {
+    for (i = 0; i < users.length; i++) {
+      var userValues = Object.values(users[i]);
+      for (v = 0; v < userValues.length; v++) {
+        valuesOfUsers.push(userValues[v]);
+      }
     }
+  } else {
+    return;
   }
 }
 getUsersInfo();
