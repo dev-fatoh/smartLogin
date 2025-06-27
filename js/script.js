@@ -19,9 +19,11 @@ var userName = document.querySelector(".register #name");
 var userEmail = document.querySelector(".register #email");
 var userPassword = document.querySelector(".register #password");
 var user = {};
-var users = [];
+var users;
 if (localStorage) {
   users = JSON.parse(localStorage.getItem("users"));
+} else {
+  users = [];
 }
 
 userName.addEventListener("change", function (e) {
@@ -60,9 +62,7 @@ userPassword.addEventListener("change", function (e) {
     user.password = e.target.value;
   }
 });
-registerBtn.addEventListener("click", function (e) {
-  e.preventDefault();
-
+registerBtn.addEventListener("click", function () {
   if (user.name && user.email && user.password) {
     users.push(user);
     localStorage.setItem("users", JSON.stringify(users));
