@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+}
+
+.container {
+  margin: 8rem auto;
+  max-width: 80%;
+  height: 500px;
+  border: 1px solid #000;
+  border-radius: 6px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  position: relative;
+}
+
+.user__icon {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  padding: 2rem;
+  width: 80px;
+  height: 80px;
+  border: 2px solid saddlebrown;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  z-index: 100;
+}
+
+.user__icon i {
+  font-size: 2.2rem;
+}
+
+.form .input {
+  position: relative;
+  border-bottom: 1px solid #333;
+  padding-bottom: 0.5em;
+}
+
+.form .input i {
+  position: absolute;
+  top: 30%;
+  bottom: 0;
+  left: 0;
+  width: 20px;
+  transform: translateX(-110%);
+}
+
+.form p a {
+  text-decoration: underline;
+  color: blue;
+  margin-left: 1rem;
+  cursor: pointer;
+}
+
+.form .alert {
+  color: green;
+}
+
+.form {
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.form h2 {
+  font-size: 2rem;
+  margin-bottom: 1em;
+}
+
+.form input {
+  padding: 1em 0.4em;
+  font-size: 1rem;
+  margin-bottom: 0.3em;
+  width: 100%;
+  border: none;
+}
+
+.form input:focus {
+  outline: none;
+}
+
+.form button {
+  padding: 0.4em 1.2em;
+  margin: 1em 0;
+  font-size: 1rem;
+  background-color: transparent;
+  border: 2px solid #333;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.form .input small {
+  position: absolute;
+  bottom: 5px;
+  right: -12px;
+  color: red;
+}
+
+.form .input.success i {
+  color: green;
+}
+
+.form .input.error i {
+  color: red;
+}
+p.userName {
+  margin: 2rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+.hidden {
+  display: none;
+}
+
+@media (min-width: 480px) {
+  body {
+    font-size: 20px;
+  }
+  .container {
+    width: 350px;
+  }
+}

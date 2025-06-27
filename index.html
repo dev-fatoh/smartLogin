@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>login app</title>
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="user__icon">
+        <i class="fa-solid fa-user"> </i>
+      </div>
+      <div class="login form">
+        <h2>smart login system</h2>
+        <div class="input">
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="enter your email"
+          />
+          <i class="fa-solid fa-envelope"></i>
+        </div>
+        <div class="input">
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="enter your password"
+          />
+          <i class="fa-solid fa-lock"></i>
+        </div>
+        <button class="login__btn">login</button>
+        <p>
+          Don't have an account ?
+          <a class="signup__link">sign up</a>
+        </p>
+        <p class="login__massage"></p>
+      </div>
+      <div class="register form hidden">
+        <h2>smart login system</h2>
+        <div class="input">
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="enter your name"
+          />
+          <i class="fa-solid fa-user"></i>
+          <small></small>
+        </div>
+        <div class="input">
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="enter your email"
+            formnovalidate
+          />
+          <i class="fa-solid fa-envelope"></i>
+          <small></small>
+        </div>
+        <div class="input">
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="enter your password"
+          />
+          <i class="fa-solid fa-lock"></i>
+          <small></small>
+        </div>
+        <button class="register__btn">sign up</button>
+        <p class="alert"></p>
+      </div>
+    </div>
+    <div class="home__page">
+      <p class="userName hidden"></p>
+    </div>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
