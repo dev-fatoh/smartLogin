@@ -98,10 +98,9 @@ function clearInputs() {
   userEmail.value = "";
   userPassword.value = "";
 }
-function displayHome(userName) {
+function displayHome() {
   document.querySelector(".container").classList.add("hidden");
   document.querySelector(".userName").classList.remove("hidden");
-  document.querySelector(".userName").innerHTML = "welcome " + userName;
 }
 function displayLoginForm() {
   registerForm.classList.add("hidden");
@@ -112,33 +111,15 @@ function displayLoginForm() {
 //////////////////log in ////////////////////
 
 // get email and password values from loccalstorage
-var valuesOfUsers = [];
-function getUsersInfo() {
-  if (localStorage) {
-    users = JSON.parse(localStorage.getItem("users"));
-    for (i = 0; i < users.length; i++) {
-      var userValues = Object.values(users[i]);
-      for (v = 0; v < userValues.length; v++) {
-        valuesOfUsers.push(userValues[v]);
-      }
-    }
-  } else {
-    return;
-  }
-}
-getUsersInfo();
-var loginUserName;
+
 function validLogin() {
-  if (
-    valuesOfUsers.includes(loginEmail.value) &&
-    valuesOfUsers.includes(loginPassword.value)
-  ) {
+  users = JSON.parse(localStorage.getItem("users"));
+  if (users.includes(loginEmail.value) && users.includes(loginPassword.value)) {
     loginText.innerHTML = "your are successfully logged in ";
 
     loginText.style.color = "green";
-    loginUserName = valuesOfUsers[valuesOfUsers.indexOf(loginEmail.value) - 1];
     setTimeout(function () {
-      displayHome(loginUserName);
+      displayHome();
     }, 3000);
 
     loginEmail.value = "";
