@@ -114,7 +114,8 @@ function displayLoginForm() {
 // get email and password values from loccalstorage
 var valuesOfUsers = [];
 function getUsersInfo() {
-  if (users.length) {
+  if (localStorage) {
+    users = JSON.parse(localStorage.getItem("users"));
     for (i = 0; i < users.length; i++) {
       var userValues = Object.values(users[i]);
       for (v = 0; v < userValues.length; v++) {
