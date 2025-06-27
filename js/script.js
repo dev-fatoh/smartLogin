@@ -114,7 +114,7 @@ function displayLoginForm() {
 // get email and password values from loccalstorage
 var valuesOfUsers = [];
 function getUsersInfo() {
-  if (users) {
+  if (users.length) {
     for (i = 0; i < users.length; i++) {
       var userValues = Object.values(users[i]);
       for (v = 0; v < userValues.length; v++) {
