@@ -20,6 +20,9 @@ var userEmail = document.querySelector(".register #email");
 var userPassword = document.querySelector(".register #password");
 var user = {};
 var users = [];
+if (localStorage.getItem("users")) {
+  users = JSON.parse(localStorage.getItem("users"));
+}
 
 userName.addEventListener("change", function (e) {
   if (e.target.value == "") {
@@ -67,8 +70,6 @@ registerBtn.addEventListener("click", function () {
     document.querySelector(".alert").textContent = "you signed up ";
     setTimeout(displayLoginForm, 3000);
     clearInputs();
-
-    user = {};
   }
 });
 
@@ -98,9 +99,10 @@ function clearInputs() {
   userEmail.value = "";
   userPassword.value = "";
 }
-function displayHome() {
+function displayHome(userName) {
   document.querySelector(".container").classList.add("hidden");
   document.querySelector(".userName").classList.remove("hidden");
+  document.querySelector(".userName").textContent = `welcom ${userName}`;
 }
 function displayLoginForm() {
   registerForm.classList.add("hidden");
@@ -110,16 +112,15 @@ function displayLoginForm() {
 }
 //////////////////log in ////////////////////
 
-// get email and password values from loccalstorage
-
 function validLogin() {
-  users = JSON.parse(localStorage.getItem("users"));
-  if (users.includes(loginEmail.value) && users.includes(loginPassword.value)) {
+  var index = users.findIndex((obj) => obj.email === loginEmail.value);
+
+  if (users.includes(users[index])) {
     loginText.innerHTML = "your are successfully logged in ";
 
     loginText.style.color = "green";
     setTimeout(function () {
-      displayHome();
+      displayHome(users[index].name);
     }, 3000);
 
     loginEmail.value = "";
@@ -131,7 +132,4 @@ function validLogin() {
   }
 }
 
-loginBtn.addEventListener("click", function (e) {
-  e.preventDefault();
-  validLogin();
-});
+loginBtn.addEventListener("click", validLogin);

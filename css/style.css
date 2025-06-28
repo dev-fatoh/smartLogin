@@ -13,6 +13,13 @@ body {
   min-height: 100vh;
   font-family: "Lato", sans-serif;
   font-size: 18px;
+  background: #833ab4;
+  background: linear-gradient(
+    45deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 46%,
+    rgba(252, 176, 69, 1) 100%
+  );
 }
 
 .container {
@@ -24,7 +31,7 @@ body {
   display: flex;
   align-items: flex-end;
   justify-content: center;
-
+  background-color: white;
   position: relative;
 }
 
@@ -52,7 +59,7 @@ body {
 .form .input {
   position: relative;
   border-bottom: 1px solid #333;
-  padding-bottom: 0.5em;
+  padding-bottom: 1em;
 }
 
 .form .input i {
@@ -116,6 +123,7 @@ body {
   bottom: 5px;
   right: -12px;
   color: red;
+  font-size: 0.8rem;
 }
 
 .form .input.success i {
